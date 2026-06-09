@@ -1,0 +1,144 @@
+server_id = "mcp_ads"
+display_name = "Ads / Advertising"
+version = "1.0.0"
+domain = "sales-marketing"
+sdk_version = "0.1.0"
+risk_level = "high"
+writes_allowed = "gated"
+transports = ["stdio"]
+credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
+
+[[tools]]
+name = "create_campaign"
+description = "Create a campaign (draft)"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_campaign"
+description = "Get a campaign by id"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_campaigns"
+description = "List campaigns by status/channel"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "set_campaign_status"
+description = "Set campaign status (affects spend) — gated"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "set_budget"
+description = "Set campaign daily budget — gated (spend)"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "create_ad_group"
+description = "Create an ad group under a campaign"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "get_ad_group"
+description = "Get an ad group by id"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_ad_groups"
+description = "List ad groups in a campaign"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "set_bid"
+description = "Set an ad group's bid/target — gated (spend)"
+risk_class = "external_write"
+requires_approval = true
+credential_bindings = []
+
+[[tools]]
+name = "create_ad"
+description = "Create an ad/creative"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_ads"
+description = "List ads in an ad group"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "create_audience"
+description = "Create an audience"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "list_audiences"
+description = "List audiences"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "ingest_metrics"
+description = "Ingest a daily performance record for an ad group"
+risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "ad_group_performance"
+description = "Ad-group KPIs (CTR/CPC/CPA/CVR/ROAS)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "campaign_performance"
+description = "Campaign performance rolled up across ad groups"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "budget_pacing"
+description = "Today's spend vs daily budget with pacing flag"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "optimize"
+description = "Optimization suggestions for a campaign's ad groups"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
+
+[[tools]]
+name = "audit_log"
+description = "Recent audit-trail entries"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []

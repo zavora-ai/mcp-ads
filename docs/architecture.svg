@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 470" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#db2777"/><stop offset="100%" style="stop-color:#f59e0b"/></linearGradient>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="780" height="470" fill="#f8fafc" rx="12"/>
+  <rect x="285" y="10" width="210" height="28" rx="8" fill="url(#hg)"/>
+  <text x="390" y="29" text-anchor="middle" fill="white" font-size="12" font-weight="bold">mcp-ads — Advertising Platform</text>
+
+  <!-- agents -->
+  <rect x="40" y="48" width="700" height="42" rx="8" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5"/>
+  <text x="390" y="62" text-anchor="middle" font-size="9" font-weight="bold" fill="#9d174d">Sales &amp; Marketing Agents (clients of the ads platform)</text>
+  <text x="390" y="79" text-anchor="middle" font-size="7" fill="#be185d">Campaign Optimizer — reads performance, suggests, then acts via gated spend tools</text>
+  <line x1="390" y1="90" x2="390" y2="106" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- tools -->
+  <rect x="30" y="110" width="720" height="104" rx="10" fill="white" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="30" y="110" width="720" height="22" rx="10" fill="url(#hg)"/>
+  <text x="390" y="125" text-anchor="middle" fill="white" font-size="10" font-weight="bold">19 Tools — advertising platform</text>
+  <g font-size="7.2" font-weight="bold" fill="#9d174d" text-anchor="middle">
+    <text x="115" y="150">Campaigns (5)</text>
+    <text x="305" y="150">Ad Groups/Ads (6)</text>
+    <text x="495" y="150">Audience/Metrics (3)</text>
+    <text x="680" y="150">Perf/Optimize (5)</text>
+  </g>
+  <g font-size="6.2" fill="#be185d" text-anchor="middle">
+    <text x="115" y="165">create · get · list</text>
+    <text x="115" y="176">status*† · budget*†</text>
+    <text x="305" y="165">ad_group · set_bid*†</text>
+    <text x="305" y="176">create_ad · lists</text>
+    <text x="495" y="165">audience · list</text>
+    <text x="495" y="176">ingest_metrics</text>
+    <text x="680" y="165">ad_group/campaign perf</text>
+    <text x="680" y="176">pacing · optimize · audit</text>
+  </g>
+  <text x="390" y="198" text-anchor="middle" font-size="6.4" fill="#64748b">* requires approval   † external write — directly affects ad spend</text>
+  <line x1="390" y1="214" x2="390" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- engines -->
+  <rect x="30" y="234" width="720" height="92" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="390" y="249" text-anchor="middle" font-size="9" font-weight="bold" fill="#92400e">Domain engines</text>
+  <g font-size="6.8" fill="#78350f" text-anchor="middle">
+    <text x="140" y="269" font-weight="bold">KPIs</text>
+    <text x="140" y="281">CTR · CPC · CPA</text>
+    <text x="140" y="292">CVR · ROAS</text>
+    <text x="340" y="269" font-weight="bold">Pacing</text>
+    <text x="340" y="281">spend today vs budget</text>
+    <text x="340" y="292">→ exhausted/hot/...</text>
+    <text x="560" y="269" font-weight="bold">Optimize (rules)</text>
+    <text x="560" y="281">scale ROAS≥3 · cut &lt;1 ·</text>
+    <text x="560" y="292">no-conv · low CTR · CPA&gt;target</text>
+  </g>
+  <line x1="390" y1="326" x2="390" y2="342" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- store -->
+  <rect x="30" y="346" width="720" height="62" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <text x="390" y="362" text-anchor="middle" font-size="9" font-weight="bold" fill="#334155">In-memory store (thread-safe) + spend audit trail</text>
+  <g font-size="6.6" fill="#475569" text-anchor="middle">
+    <text x="390" y="379">campaigns · ad_groups · ads · audiences · metrics</text>
+    <text x="390" y="392" fill="#64748b">CMP · ADG · AD · AUD</text>
+  </g>
+
+  <text x="390" y="430" text-anchor="middle" font-size="8" fill="#db2777" font-weight="bold">adk-mcp-sdk · rmcp 1.7 · stdio transport · registry-ready manifest</text>
+  <text x="390" y="448" text-anchor="middle" font-size="7" fill="#94a3b8">Apache-2.0 · zavora-ai/mcp-ads</text>
+</svg>
