@@ -81,7 +81,7 @@ cd mcp-ads && cargo build --release
 ```toml
 server_id = "mcp_ads"
 display_name = "Ads / Advertising"
-version = "1.0.0"
+version = "1.1.0"
 domain = "sales-marketing"
 risk_level = "high"
 writes_allowed = "gated"

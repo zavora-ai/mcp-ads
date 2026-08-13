@@ -494,7 +494,7 @@ dependencies = [
 
 [[package]]
 name = "mcp-ads"
-version = "1.0.0"
+version = "1.1.0"
 dependencies = [
  "adk-mcp-sdk",
  "anyhow",
