@@ -1,144 +1,144 @@
 server_id = "mcp_ads"
-display_name = "Ads / Advertising"
+display_name = "Ads"
 version = "1.0.0"
 domain = "sales-marketing"
-sdk_version = "0.1.0"
+sdk_version = "0.2.0"
 risk_level = "high"
 writes_allowed = "gated"
 transports = ["stdio"]
 credentials = []
-governance_gates = []
+governance_gates = ["mrtr_approval"]
 environments = ["development", "staging", "production"]
 
 [[tools]]
 name = "create_campaign"
-description = "Create a campaign (draft)"
+description = "Create a campaign (starts in draft). objective: awareness/traffic/conversions/sales; channel: search/social/display/video."
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "get_campaign"
-description = "Get a campaign by id"
+description = "Get a campaign by id."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "list_campaigns"
-description = "List campaigns by status/channel"
+description = "List campaigns, optionally by status and/or channel."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "set_campaign_status"
-description = "Set campaign status (affects spend) — gated"
+description = "Set a campaign's status (draft/active/paused/ended). Affects whether it spends — gated."
 risk_class = "external_write"
 requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "set_budget"
-description = "Set campaign daily budget — gated (spend)"
+description = "Set a campaign's daily budget. Directly affects spend — gated."
 risk_class = "external_write"
 requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "create_ad_group"
-description = "Create an ad group under a campaign"
+description = "Create an ad group under a campaign. bid_strategy: manual_cpc/max_conversions/target_cpa/target_roas; bid is the CPC or target value."
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "get_ad_group"
-description = "Get an ad group by id"
+description = "Get an ad group by id."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "list_ad_groups"
-description = "List ad groups in a campaign"
+description = "List ad groups in a campaign."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "set_bid"
-description = "Set an ad group's bid/target — gated (spend)"
+description = "Set an ad group's bid or target (CPC/CPA/ROAS depending on strategy). Directly affects spend — gated."
 risk_class = "external_write"
 requires_approval = true
 credential_bindings = []
 
 [[tools]]
 name = "create_ad"
-description = "Create an ad/creative"
+description = "Create an ad/creative under an ad group."
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "list_ads"
-description = "List ads in an ad group"
+description = "List ads in an ad group."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "create_audience"
-description = "Create an audience"
+description = "Create an audience (interest/remarketing/lookalike/custom)."
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "list_audiences"
-description = "List audiences"
+description = "List audiences."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "ingest_metrics"
-description = "Ingest a daily performance record for an ad group"
+description = "Ingest a daily performance record for an ad group (impressions/clicks/spend/conversions/revenue). Replaces any same-date record."
 risk_class = "internal_write"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "ad_group_performance"
-description = "Ad-group KPIs (CTR/CPC/CPA/CVR/ROAS)"
+description = "Ad-group performance with derived KPIs: CTR, CPC, CPA, CVR, ROAS."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "campaign_performance"
-description = "Campaign performance rolled up across ad groups"
+description = "Campaign performance rolled up across ad groups (CTR/CPC/CPA/ROAS)."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "budget_pacing"
-description = "Today's spend vs daily budget with pacing flag"
+description = "Budget pacing for a campaign: today's spend vs daily budget, with a pacing flag."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "optimize"
-description = "Optimization suggestions for a campaign's ad groups"
+description = "Optimization suggestions for a campaign's ad groups (scale winners, cut losers, fix low CTR / CPA over target). Powers the Campaign Optimizer; recommendations only — spend changes stay gated."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []
 
 [[tools]]
 name = "audit_log"
-description = "Recent audit-trail entries"
+description = "Recent audit-trail entries (most recent first)."
 risk_class = "read_only"
 requires_approval = false
 credential_bindings = []

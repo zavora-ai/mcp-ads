@@ -80,7 +80,7 @@ pub struct AuditLogInput { #[serde(default = "dlimit")] pub limit: usize }
 #[derive(Clone)]
 pub struct AdsServer { pub store: Arc<AdsStore> }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl AdsServer {
     // campaigns
     #[tool(description = "Create a campaign (starts in draft). objective: awareness/traffic/conversions/sales; channel: search/social/display/video.")]
@@ -209,4 +209,11 @@ impl HealthCheck for AdsServer {
     async fn check_health(&self) -> HealthStatus {
         HealthStatus { healthy: true, message: Some("operational".into()), latency_ms: Some(1) }
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: AdsServer,
+    task_tools: [],
+    approval_tools: ["set_campaign_status", "set_budget", "set_bid"],
+    cache_ttl_ms: 60_000,
 }
